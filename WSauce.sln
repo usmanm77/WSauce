@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSauce.Desktop", "WSauce.Desktop\WSauce.Desktop.csproj", "{A51490F6-DF29-461F-9141-3BC8ABA2624D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSauce.Data", "WSauce.Data\WSauce.Data.csproj", "{91F99F62-2C0E-425F-B1F4-42E85668024C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A51490F6-DF29-461F-9141-3BC8ABA2624D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A51490F6-DF29-461F-9141-3BC8ABA2624D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A51490F6-DF29-461F-9141-3BC8ABA2624D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F99F62-2C0E-425F-B1F4-42E85668024C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F99F62-2C0E-425F-B1F4-42E85668024C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F99F62-2C0E-425F-B1F4-42E85668024C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F99F62-2C0E-425F-B1F4-42E85668024C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
