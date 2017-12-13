@@ -41,8 +41,8 @@ namespace WSauce.Desktop.Views.Home
                     new MenuItemViewModel { Title = "Swallow", Background = greenBrush },
                     new MenuItemViewModel { Title = "Drinks", Background = blackBrush },
                     new MenuItemViewModel { Title = "Cocktails", Background = blueBrush },
-                    new MenuItemViewModel { Title = "Confectionaries", Background = redBrush },
-                    new MenuItemViewModel { Title = "Item", Background = purpleBrush },
+                    new MenuItemViewModel { Title = "Chips", Background = redBrush },
+                    new MenuItemViewModel { Title = "Shawarma", Background = purpleBrush },
                 }
             };
         }

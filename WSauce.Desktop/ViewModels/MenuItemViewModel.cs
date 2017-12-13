@@ -13,7 +13,7 @@ namespace WSauce.Desktop.ViewModels
 
         public string Title
         {
-            get { return title; }
+            get { return title.ToUpper(); }
             set
             {
                 if (title != value)
