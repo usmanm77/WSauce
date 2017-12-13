@@ -5,15 +5,37 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WSauce.Desktop.Views.Home"
              xmlns:design="clr-namespace:WSauce.Desktop.DesignData"
-Background="{StaticResource MaterialDesignPaper}"
+             Background="{StaticResource MaterialDesignPaper}"
              mc:Ignorable="d" 
              FontFamily="Roboto"
-                          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-                                       d:DataContext="{x:Static design:DesignTimeSampleData.HomeSampleData}"
-             d:DesignHeight="500" d:DesignWidth="975">
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Medium"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal" 
+             TextOptions.TextRenderingMode="Auto"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DataContext="{x:Static design:DesignTimeSampleData.HomeSampleData}"
+             d:DesignHeight="700" d:DesignWidth="975">
+    <UserControl.Resources>
+        <Style x:Key="DatagridTextStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            <Setter Property="MaxHeight" Value="50"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="DatagridNumberStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="MaxHeight" Value="50"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <!--<Setter Property="FontWeight" Value="DemiBold"/>-->
+            <Setter Property="Foreground" Value="Black"/>
+
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="500"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
@@ -21,7 +43,7 @@ Background="{StaticResource MaterialDesignPaper}"
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
@@ -30,14 +52,43 @@ Background="{StaticResource MaterialDesignPaper}"
                 <RowDefinition Height="250"/>
             </Grid.RowDefinitions>
 
+            <StackPanel Margin="2,2,5,2" Grid.Row="1" Grid.ColumnSpan="2">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Items Selected" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Margin="0,0,0,5"/>
+                <materialDesign:Card Background="{StaticResource MaterialDesignPaper}" Padding="1" Margin="1" VerticalAlignment="Stretch">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="100" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="118"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="1" BorderThickness="0,2,0,0" Grid.ColumnSpan="2" BorderBrush="#FFCCCCCC" />
 
-            <materialDesign:Card Margin="2,2,5,2" Grid.Row="1" Grid.ColumnSpan="2"  Padding="10" VerticalAlignment="Stretch">
-                <DataGrid />
-
-            </materialDesign:Card>
-
-            <Border BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}">
-            </Border>
+                        <DataGrid ItemsSource="{Binding CartItems}" VerticalScrollBarVisibility="Visible" GridLinesVisibility="All" VerticalGridLinesBrush="#FFDDDDDD" HorizontalGridLinesBrush="#FFCCCCCC" CanUserAddRows="False" AutoGenerateColumns="False" FontSize="14" Grid.ColumnSpan="2" Height="245" Margin="0">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn ElementStyle="{StaticResource DatagridNumberStyle}" Binding="{Binding Quantity}" Foreground="DarkRed" Width="*" ClipboardContentBinding="{x:Null}" Header="Qty" />
+                                <DataGridTextColumn ElementStyle="{StaticResource DatagridTextStyle}" Binding="{Binding ProductName}" Width="4*" ClipboardContentBinding="{x:Null}" Header="Item" />
+                                <DataGridTextColumn ElementStyle="{StaticResource DatagridNumberStyle}" Binding="{Binding UnitPrice, Mode=OneWay, ConverterCulture=yo-ng, StringFormat=C, UpdateSourceTrigger=PropertyChanged}" Width="100" ClipboardContentBinding="{x:Null}" Header="Price" />
+                                <DataGridTextColumn ElementStyle="{StaticResource DatagridNumberStyle}" Binding="{Binding TotalPrice, Mode=OneWay, ConverterCulture=yo-ng, StringFormat=C, UpdateSourceTrigger=PropertyChanged}" Width="100" ClipboardContentBinding="{x:Null}" Header="Total" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel Grid.Row="1" Margin="10,10,0,0">
+                            <TextBlock Text="Sub-Total" FontSize="14" Height="22" />
+                            <TextBlock Text="Tax" FontSize="14" Height="22" />
+                            <TextBlock Text="TOTAL" FontSize="14" Height="22" />
+                            <TextBlock Text="TO PAY" FontSize="18" FontWeight="Bold" Height="22" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Margin="3,10,5,0" Grid.Column="1">
+                            <TextBlock Text="$30.11" FontSize="14" Height="22" />
+                            <TextBlock Text="$31.10" FontSize="14" Height="22" />
+                            <TextBlock Text="$44,001.00" FontSize="14" Height="22" />
+                            <TextBlock Text="$10,000.00" FontSize="18" Foreground="Red" FontWeight="Bold" Height="22" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+            </StackPanel>
 
             <Border Margin="0,5,0,0" Grid.Row="2">
                 <Grid>
@@ -55,32 +106,32 @@ Background="{StaticResource MaterialDesignPaper}"
                     </Grid.ColumnDefinitions>
 
                     <!--Row 1-->
-                    <Button Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold">
+                    <Button Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold">
                         <materialDesign:PackIcon Kind="ArrowUpBold" Height="35" Width="35"/>
                     </Button>
-                    <Button Content="7" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Column="1"/>
-                    <Button Content="8" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Column="2"/>
-                    <Button Content="9" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Column="3"/>
+                    <Button Content="7" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Column="1"/>
+                    <Button Content="8" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Column="2"/>
+                    <Button Content="9" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Column="3"/>
 
                     <!--Row 2-->
-                    <Button Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1">
+                    <Button Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1">
                         <materialDesign:PackIcon Kind="ArrowDownBold" Height="35" Width="35" />
                     </Button>
-                    <Button Content="4" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1" Grid.Column="1"/>
-                    <Button Content="5" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1" Grid.Column="2"/>
-                    <Button Content="6" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1" Grid.Column="3"/>
+                    <Button Content="4" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1" Grid.Column="1"/>
+                    <Button Content="5" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1" Grid.Column="2"/>
+                    <Button Content="6" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1" Grid.Column="3"/>
 
                     <!--Row 3-->
-                    <Button Content="X" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2"/>
-                    <Button Content="1" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2" Grid.Column="1"/>
-                    <Button Content="2" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2" Grid.Column="2"/>
-                    <Button Content="3" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2" Grid.Column="3"/>
+                    <Button Content="X" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2"/>
+                    <Button Content="1" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2" Grid.Column="1"/>
+                    <Button Content="2" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2" Grid.Column="2"/>
+                    <Button Content="3" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2" Grid.Column="3"/>
 
                     <!--Row 4-->
-                    <Button Content="C" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3"/>
-                    <Button Content="0" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3" Grid.Column="1"/>
-                    <Button Content="00" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3" Grid.Column="2"/>
-                    <Button Content="." Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource NumberPadBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3" Grid.Column="3"/>
+                    <Button Content="C" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3"/>
+                    <Button Content="0" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3" Grid.Column="1"/>
+                    <Button Content="00" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3" Grid.Column="2"/>
+                    <Button Content="." Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3" Grid.Column="3"/>
 
                 </Grid>
             </Border>
@@ -93,9 +144,9 @@ Background="{StaticResource MaterialDesignPaper}"
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <Button Content="Print" Grid.Row="0" Height="Auto" Margin="3" BorderThickness="0" Padding="0" FontSize="18" FontWeight="SemiBold" Grid.Column="1" Background="{DynamicResource NumberPadBrush}" OpacityMask="#FFC7254E"/>
-                    <Button Content="Delete All" Height="Auto" Grid.Row="1" Margin="3" BorderThickness="0" Padding="0" FontSize="18" Background="{DynamicResource NumberPadBrush}" FontWeight="SemiBold" Grid.Column="1"/>
-                    <Button Content="Discount" Height="Auto" Margin="3" BorderThickness="0" Grid.Row="2" Padding="0" FontSize="18" Background="{DynamicResource NumberPadBrush}" FontWeight="SemiBold" Grid.Column="1"/>
+                    <Button Content="Print" Grid.Row="0" Height="Auto" Margin="3" BorderThickness="0" Padding="0" FontSize="18" FontWeight="SemiBold" Grid.Column="1" Background="{DynamicResource PrimaryHueDarkBrush}" OpacityMask="#FFC7254E"/>
+                    <Button Content="Delete All" Height="Auto" Grid.Row="1" Margin="3" BorderThickness="0" Padding="0" FontSize="18" Background="{DynamicResource PrimaryHueDarkBrush}" FontWeight="SemiBold" Grid.Column="1"/>
+                    <Button Content="Discount" Height="Auto" Margin="3" BorderThickness="0" Grid.Row="2" Padding="0" FontSize="18" Background="{DynamicResource PrimaryHueDarkBrush}" FontWeight="SemiBold" Grid.Column="1"/>
                     <Button Content="Checkout" Height="Auto" Margin="3" BorderThickness="0" Grid.Row="3" Padding="0" FontSize="18" Background="Green" FontWeight="SemiBold" Grid.Column="1"/>
 
                 </Grid>
@@ -121,8 +172,8 @@ Background="{StaticResource MaterialDesignPaper}"
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <materialDesign:Card Background="{Binding Background}" Padding="0" Margin="1">
-                                <Button Content="{Binding Title}" Padding="3" FontWeight="Bold" Foreground="#fff" Background="{Binding Background}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="0" BorderThickness="0" Height="45" Width="137" FontFamily="Roboto" FontSize="14"/>
+                            <materialDesign:Card Background="{Binding Background}" Padding="0" Margin="2">
+                                <Button x:Name="btnCategories" Click="btnCategories_Click" Content="{Binding Description}" Padding="3" FontWeight="Bold" Foreground="#fff" Background="{Binding Background}" Margin="0" BorderThickness="0" Height="45" Width="145" FontFamily="Roboto" FontSize="14"/>
                             </materialDesign:Card>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
@@ -139,13 +190,16 @@ Background="{StaticResource MaterialDesignPaper}"
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <materialDesign:Card Background="{Binding Background}" Padding="0" Margin="1">
-                                <Button Content="{Binding Title}" Padding="3" FontWeight="Bold" Foreground="#fff" Background="{Binding Background}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="0" BorderThickness="0" Height="45" Width="137" FontFamily="Roboto" FontSize="14"/>
+                            <materialDesign:Card Background="{Binding Background}" Padding="0" Margin="2">
+                                <Button Padding="2" FontWeight="Bold" HorizontalContentAlignment="Center" Background="{Binding Background}" Margin="0" BorderThickness="0" Height="45" Width="145" FontFamily="Roboto" FontSize="14">
+                                    <TextBlock Text="{Binding Description}" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Stretch" />
+                                </Button>
                             </materialDesign:Card>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
-            </StackPanel>        </Grid>
+            </StackPanel>
+        </Grid>
 
     </Grid>
 </UserControl>

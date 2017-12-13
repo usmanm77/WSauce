@@ -24,6 +24,19 @@ namespace WSauce.Desktop.ViewModels
             }
         }
 
-        public SolidColorBrush Background { get; internal set; }
+        private SolidColorBrush background;
+
+        public SolidColorBrush Background
+        {
+            get { return background; }
+            set
+            {
+                if (background != value)
+                {
+                    background = value;
+                    NotifyPropertyChanged("Background");
+                }
+            }
+        }
     }
 }

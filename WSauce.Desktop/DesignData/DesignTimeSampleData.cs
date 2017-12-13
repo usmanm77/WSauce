@@ -17,24 +17,56 @@ namespace WSauce.Desktop.DesignData
 
             get
             {
-                var maroonBrush = new SolidColorBrush(Color.FromRgb(119, 0, 0));
-                var greenBrush = new SolidColorBrush(Color.FromRgb(0, 119, 42));
-                var blueBrush = new SolidColorBrush(Color.FromRgb(0, 79, 210));
-                var blackBrush = new SolidColorBrush(Color.FromRgb(0, 0, 0));
-                var redBrush = new SolidColorBrush(Color.FromRgb(255, 0, 0));
-                var purpleBrush = new SolidColorBrush(Color.FromRgb(121, 0, 178));
+                //var maroonBrush = new SolidColorBrush(Colors.Maroon);
+                //var greenBrush = new SolidColorBrush(Colors.DarkGreen);
+                //var blueBrush = new SolidColorBrush(Colors.DarkBlue);
+                //var blackBrush = new SolidColorBrush(Colors.Black);
+                //var redBrush = new SolidColorBrush(Colors.Red);
+                //var purpleBrush = new SolidColorBrush(Colors.MediumPurple);
+
+                var maroonBrush = App.Current.Resources["PrimaryHueDarkBrush"] as SolidColorBrush;
+                var greenBrush = App.Current.Resources["PrimaryHueDarkBrush"] as SolidColorBrush;
+                var blueBrush = App.Current.Resources["PrimaryHueDarkBrush"] as SolidColorBrush;
+                var blackBrush = App.Current.Resources["PrimaryHueDarkBrush"] as SolidColorBrush;
+                var redBrush = App.Current.Resources["PrimaryHueDarkBrush"] as SolidColorBrush;
+                var purpleBrush = App.Current.Resources["PrimaryHueDarkBrush"] as SolidColorBrush;
 
                 return new HomeViewModel
                 {
                     Categories = new ObservableCollection<CategoriesViewModel>
-                {
-                    new CategoriesViewModel { Description = "Food", Background = maroonBrush },
-                    new CategoriesViewModel { Description = "Swallow", Background = greenBrush },
-                    new CategoriesViewModel { Description = "Drinks", Background = blackBrush },
-                    new CategoriesViewModel { Description = "Cocktails", Background = blueBrush },
-                    new CategoriesViewModel { Description = "Chips", Background = redBrush },
-                    new CategoriesViewModel { Description = "Shawarma", Background = purpleBrush },
-                }
+                    {
+                        new CategoriesViewModel { Description = "Food", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Swallow", Background = greenBrush },
+                        new CategoriesViewModel { Description = "Drinks", Background = blackBrush },
+                        new CategoriesViewModel { Description = "Cocktails", Background = blueBrush },
+                        new CategoriesViewModel { Description = "Chips", Background = redBrush },
+                        new CategoriesViewModel { Description = "Shawarma", Background = purpleBrush },
+                    },
+                    MenuItems = new ObservableCollection<CategoriesViewModel>
+                    {
+                        new CategoriesViewModel { Description = "Food & Drinks and Food", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Swallow", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Drinks", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Cocktails", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Chips", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Shawarma", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Food", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Swallow", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Drinks", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Cocktails", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Chips", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Shawarma", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Food", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Swallow", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Drinks", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Cocktails", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Chips", Background = maroonBrush },
+                        new CategoriesViewModel { Description = "Shawarma", Background = maroonBrush },
+                    },
+                    CartItems = new ObservableCollection<CartItemViewModel>
+                    {
+                        new CartItemViewModel {ProductName = "Shawarma with Extra Chicken Strips", Description = "Shawarma with Extra Chicken Strips", Quantity = 2, UnitPrice = 350 }
+                    }
                 };
             }
         }
