@@ -9,17 +9,17 @@ namespace WSauce.Desktop.ViewModels
 {
     public class CategoriesViewModel : ViewModelBase
     {
-        private string catrgories;
+        private string description;
 
-        public string Categories
+        public string Description
         {
-            get { return catrgories.ToUpper(); }
+            get { return description.ToUpper(); }
             set
             {
-                if (catrgories != value)
+                if (description != value)
                 {
-                    catrgories = value;
-                    NotifyPropertyChanged("Categories");
+                    description = value;
+                    NotifyPropertyChanged("Description");
                 }
             }
         }

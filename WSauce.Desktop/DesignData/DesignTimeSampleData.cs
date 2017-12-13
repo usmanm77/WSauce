@@ -28,12 +28,12 @@ namespace WSauce.Desktop.DesignData
                 {
                     Categories = new ObservableCollection<CategoriesViewModel>
                 {
-                    new CategoriesViewModel { Categories = "Food", Background = maroonBrush },
-                    new CategoriesViewModel { Categories = "Swallow", Background = greenBrush },
-                    new CategoriesViewModel { Categories = "Drinks", Background = blackBrush },
-                    new CategoriesViewModel { Categories = "Cocktails", Background = blueBrush },
-                    new CategoriesViewModel { Categories = "Chips", Background = redBrush },
-                    new CategoriesViewModel { Categories = "Shawarma", Background = purpleBrush },
+                    new CategoriesViewModel { Description = "Food", Background = maroonBrush },
+                    new CategoriesViewModel { Description = "Swallow", Background = greenBrush },
+                    new CategoriesViewModel { Description = "Drinks", Background = blackBrush },
+                    new CategoriesViewModel { Description = "Cocktails", Background = blueBrush },
+                    new CategoriesViewModel { Description = "Chips", Background = redBrush },
+                    new CategoriesViewModel { Description = "Shawarma", Background = purpleBrush },
                 }
                 };
             }
