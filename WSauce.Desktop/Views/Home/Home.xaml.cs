@@ -35,14 +35,14 @@ namespace WSauce.Desktop.Views.Home
 
             DataContext = new HomeViewModel
             {
-                MenuItems = new ObservableCollection<MenuItemViewModel>
+                Categories = new ObservableCollection<CategoriesViewModel>
                 {
-                    new MenuItemViewModel { Title = "Food", Background = maroonBrush },
-                    new MenuItemViewModel { Title = "Swallow", Background = greenBrush },
-                    new MenuItemViewModel { Title = "Drinks", Background = blackBrush },
-                    new MenuItemViewModel { Title = "Cocktails", Background = blueBrush },
-                    new MenuItemViewModel { Title = "Chips", Background = redBrush },
-                    new MenuItemViewModel { Title = "Shawarma", Background = purpleBrush },
+                    new CategoriesViewModel { Categories = "Food", Background = maroonBrush },
+                    new CategoriesViewModel { Categories = "Swallow", Background = greenBrush },
+                    new CategoriesViewModel { Categories = "Drinks", Background = blackBrush },
+                    new CategoriesViewModel { Categories = "Cocktails", Background = blueBrush },
+                    new CategoriesViewModel { Categories = "Chips", Background = redBrush },
+                    new CategoriesViewModel { Categories = "Shawarma", Background = purpleBrush },
                 }
             };
         }

@@ -9,17 +9,17 @@ namespace WSauce.Desktop.ViewModels
 {
     public class HomeViewModel : ViewModelBase
     {
-        private ObservableCollection<MenuItemViewModel> menuItems;
+        private ObservableCollection<CategoriesViewModel> categories;
 
-        public ObservableCollection<MenuItemViewModel> MenuItems
+        public ObservableCollection<CategoriesViewModel> Categories
         {
-            get { return menuItems; }
+            get { return categories; }
             set
             {
-                if (menuItems != value)
+                if (categories != value)
                 {
-                    menuItems = value;
-                    NotifyPropertyChanged("MenuItems");
+                    categories = value;
+                    NotifyPropertyChanged("Categories");
                 }
             }
         }

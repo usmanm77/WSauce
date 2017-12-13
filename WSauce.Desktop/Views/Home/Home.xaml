@@ -111,44 +111,41 @@ Background="{StaticResource MaterialDesignPaper}"
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-                <StackPanel Orientation="Vertical" Grid.Row="0" Margin="3,0,0,0">
-                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Categories" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Margin="0"/>
-
-                    <ItemsControl ItemsSource="{Binding MenuItems}" Margin="0,5,0,0">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel IsItemsHost="True" />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
+            <StackPanel Orientation="Vertical" Grid.Row="0" Margin="3,0,0,0">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Categories" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Margin="0"/>
+                <ItemsControl ItemsSource="{Binding Categories}" Margin="0,5,0,0">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel IsItemsHost="True" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
                             <materialDesign:Card Background="{Binding Background}" Padding="0" Margin="1">
                                 <Button Content="{Binding Title}" Padding="3" FontWeight="Bold" Foreground="#fff" Background="{Binding Background}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="0" BorderThickness="0" Height="45" Width="137" FontFamily="Roboto" FontSize="14"/>
                             </materialDesign:Card>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
 
-            <materialDesign:Card Grid.Row="1" Padding="10" Margin="4" VerticalAlignment="Stretch">
-                <StackPanel Orientation="Vertical" Margin="3,0,0,0">
-                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Menu Items" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Margin="0"/>
-
-                    <ItemsControl ItemsSource="{Binding SubMenuItems}" Margin="0,5,0,0">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel IsItemsHost="True" />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Button Content="{Binding Title}" Foreground="#fff" BorderThickness="0" BorderBrush="#fff" Background="{Binding Background}" Height="50" Width="150" FontFamily="Roboto" FontSize="16"/>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-            </materialDesign:Card>
-        </Grid>
+            <StackPanel Orientation="Vertical" Grid.Row="1" Margin="3,10,0,0">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Menu Items" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Margin="0"/>
+                <ItemsControl ItemsSource="{Binding MenuItems}" Margin="0,5,0,0">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel IsItemsHost="True" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <materialDesign:Card Background="{Binding Background}" Padding="0" Margin="1">
+                                <Button Content="{Binding Title}" Padding="3" FontWeight="Bold" Foreground="#fff" Background="{Binding Background}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="0" BorderThickness="0" Height="45" Width="137" FontFamily="Roboto" FontSize="14"/>
+                            </materialDesign:Card>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>        </Grid>
 
     </Grid>
 </UserControl>

@@ -7,19 +7,19 @@ using System.Windows.Media;
 
 namespace WSauce.Desktop.ViewModels
 {
-    public class MenuItemViewModel : ViewModelBase
+    public class CategoriesViewModel : ViewModelBase
     {
-        private string title;
+        private string catrgories;
 
-        public string Title
+        public string Categories
         {
-            get { return title.ToUpper(); }
+            get { return catrgories.ToUpper(); }
             set
             {
-                if (title != value)
+                if (catrgories != value)
                 {
-                    title = value;
-                    NotifyPropertyChanged("Title");
+                    catrgories = value;
+                    NotifyPropertyChanged("Categories");
                 }
             }
         }
