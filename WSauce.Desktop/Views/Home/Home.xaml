@@ -106,32 +106,32 @@
                     </Grid.ColumnDefinitions>
 
                     <!--Row 1-->
-                    <Button Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold">
+                    <Button Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold">
                         <materialDesign:PackIcon Kind="ArrowUpBold" Height="35" Width="35"/>
                     </Button>
-                    <Button Content="7" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Column="1"/>
-                    <Button Content="8" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Column="2"/>
-                    <Button Content="9" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Column="3"/>
+                    <Button Content="7" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Column="1"/>
+                    <Button Content="8" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Column="2"/>
+                    <Button Content="9" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Column="3"/>
 
                     <!--Row 2-->
-                    <Button Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1">
+                    <Button Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1">
                         <materialDesign:PackIcon Kind="ArrowDownBold" Height="35" Width="35" />
                     </Button>
-                    <Button Content="4" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1" Grid.Column="1"/>
-                    <Button Content="5" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1" Grid.Column="2"/>
-                    <Button Content="6" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1" Grid.Column="3"/>
+                    <Button Content="4" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1" Grid.Column="1"/>
+                    <Button Content="5" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1" Grid.Column="2"/>
+                    <Button Content="6" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="1" Grid.Column="3"/>
 
                     <!--Row 3-->
-                    <Button Content="X" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2"/>
-                    <Button Content="1" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2" Grid.Column="1"/>
-                    <Button Content="2" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2" Grid.Column="2"/>
-                    <Button Content="3" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2" Grid.Column="3"/>
+                    <Button Content="X" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2"/>
+                    <Button Content="1" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2" Grid.Column="1"/>
+                    <Button Content="2" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2" Grid.Column="2"/>
+                    <Button Content="3" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="2" Grid.Column="3"/>
 
                     <!--Row 4-->
-                    <Button Content="C" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3"/>
-                    <Button Content="0" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3" Grid.Column="1"/>
-                    <Button Content="00" Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3" Grid.Column="2"/>
-                    <Button Content="." Height="Auto" Margin="3" BorderThickness="0" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3" Grid.Column="3"/>
+                    <Button Content="C" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3"/>
+                    <Button Content="0" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3" Grid.Column="1"/>
+                    <Button Content="00" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3" Grid.Column="2"/>
+                    <Button Content="." Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Background="{StaticResource PrimaryHueDarkBrush}" Padding="0" FontSize="30" FontWeight="Bold" Grid.Row="3" Grid.Column="3"/>
 
                 </Grid>
             </Border>
@@ -144,10 +144,10 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <Button Content="Print" Grid.Row="0" Height="Auto" Margin="3" BorderThickness="0" Padding="0" FontSize="18" FontWeight="SemiBold" Grid.Column="1" Background="{DynamicResource PrimaryHueDarkBrush}" OpacityMask="#FFC7254E"/>
-                    <Button Content="Delete All" Height="Auto" Grid.Row="1" Margin="3" BorderThickness="0" Padding="0" FontSize="18" Background="{DynamicResource PrimaryHueDarkBrush}" FontWeight="SemiBold" Grid.Column="1"/>
-                    <Button Content="Discount" Height="Auto" Margin="3" BorderThickness="0" Grid.Row="2" Padding="0" FontSize="18" Background="{DynamicResource PrimaryHueDarkBrush}" FontWeight="SemiBold" Grid.Column="1"/>
-                    <Button Content="Checkout" Height="Auto" Margin="3" BorderThickness="0" Grid.Row="3" Padding="0" FontSize="18" Background="Green" FontWeight="SemiBold" Grid.Column="1"/>
+                    <Button Content="Print" Grid.Row="0" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Padding="0" FontSize="18" FontWeight="SemiBold" Grid.Column="1" Background="{DynamicResource PrimaryHueDarkBrush}" OpacityMask="#FFC7254E"/>
+                    <Button Content="Delete All" Height="Auto" Grid.Row="1" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Padding="0" FontSize="18" Background="{DynamicResource PrimaryHueDarkBrush}" FontWeight="SemiBold" Grid.Column="1"/>
+                    <Button Content="Discount" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Grid.Row="2" Padding="0" FontSize="18" Background="{DynamicResource PrimaryHueDarkBrush}" FontWeight="SemiBold" Grid.Column="1"/>
+                    <Button Content="Checkout" Height="Auto" Margin="0" BorderThickness="1" BorderBrush="{StaticResource PrimaryHueLightBrush}" Grid.Row="3" Padding="0" FontSize="18" Background="Green" FontWeight="SemiBold" Grid.Column="1"/>
 
                 </Grid>
 
@@ -172,9 +172,7 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <materialDesign:Card Background="{Binding Background}" Padding="0" Margin="2">
-                                <Button x:Name="btnCategories" Click="btnCategories_Click" Content="{Binding Description}" Padding="3" FontWeight="Bold" Foreground="#fff" Background="{Binding Background}" Margin="0" BorderThickness="0" Height="45" Width="145" FontFamily="Roboto" FontSize="14"/>
-                            </materialDesign:Card>
+                                <Button x:Name="btnCategories" Click="btnCategories_Click" Content="{Binding Description}" Padding="3" FontWeight="UltraBold" Foreground="#fff" Background="{Binding Background}" Margin="0" BorderThickness="0" BorderBrush="{StaticResource PrimaryHueLightBrush}" Height="50" Width="157" FontFamily="Roboto" FontSize="13"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
@@ -190,11 +188,9 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <materialDesign:Card Background="{Binding Background}" Padding="0" Margin="2">
-                                <Button Padding="2" FontWeight="Bold" HorizontalContentAlignment="Center" Background="{Binding Background}" Margin="0" BorderThickness="0" Height="45" Width="145" FontFamily="Roboto" FontSize="14">
-                                    <TextBlock Text="{Binding Description}" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Stretch" />
-                                </Button>
-                            </materialDesign:Card>
+                            <Button x:Name="btnCategories" Click="btnCategories_Click" Padding="3" HorizontalContentAlignment="Center" Foreground="#fff" Background="{Binding Background}" Margin="0" BorderThickness=".5" BorderBrush="{StaticResource MaterialDesignPaper}" MinHeight="50" Width="157">
+                                <TextBlock  Text="{Binding Description}" TextWrapping="Wrap" TextAlignment="Center" FontWeight="UltraBold" FontFamily="Roboto" FontSize="13" />
+                            </Button>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
